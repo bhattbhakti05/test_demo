@@ -68,18 +68,19 @@ export class Works extends Component {
                             <h2>title for team and talent, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
-                        <div className="container-fuild">
+                        <div className="container-post-work">
                             {works.map( (work,i) => 
                                 <div className="row">
                                         <div class="col-xs-3 col-centered">
                                             <div class="item">
-                                                <div class="content">
-                                                    <h2 className="title-txt">{work.title.rendered}</h2>
-                                                    <div className="case-txt" dangerouslySetInnerHTML={{ __html: work.excerpt.rendered }}></div>
+                                            <div className="col-12 col-lg-6 work-img ">
+                                                    <img className="post-work-img" src={ work._embedded['wp:featuredmedia']['0'].source_url } alt=''/>
                                                 </div>
-                                                <div className="col-12 col-lg-6">
-                                                    <img src={ work._embedded['wp:featuredmedia']['0'].source_url } alt=''/>
-                                                </div> 
+                                                <div class="content-work">
+                                                    <h4 className="title-txt-work">{work.title.rendered}</h4>
+                                                    <div className="excerpt-txt-work" dangerouslySetInnerHTML={{ __html: work.excerpt.rendered }}></div>
+                                                </div>
+                                                 
                                             </div>
                                         </div>
         
